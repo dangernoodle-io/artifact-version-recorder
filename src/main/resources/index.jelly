@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  <p>This plugin can be used to resolve the version number of an artifact after it has been built.</p>
+</div>
