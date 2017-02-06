@@ -9,13 +9,13 @@ jdk:
 branches:
   only:
   - master
-before_install: 
+before_install:
 - echo "MAVEN_OPTS='-Xmx256m'" > ~/.mavenrc
-- curl -o $HOME/.m2/settings.xml
-  https://raw.githubusercontent.com/dangernoodle-io/artifact-version-recorder/master/src/main/travis/settings.xml
+- curl -o $HOME/.m2/settings.xml https://raw.githubusercontent.com/dangernoodle-io/artifact-version-recorder/master/src/main/travis/settings.xml
 script:
 - mvn -V -B verify jacoco:report coveralls:report
 notifications:
   email: false
   slack:
-    secure: ddF1vp9zeEZNYZnz12NEsWxUrfkqVHyx5yY3WiwWcAEdxpS3Q6q+gZfB8dAm+LNIgzqFcrUdY1wcX4EPSD7ID2bCrtV1qdEDffn1PLGsUypf67xM/cC+iPBzmoKsvLb4lquxWYEubzLmTMNjvehrKXmyb+1RXr/TbYrrKsgAzfim8S2K7nPUMlmkSIrBVdeYKTTcJqdbhrXCuMgrvPC2oSYKsbreAK4DJzmzYFO1XpFMj9O855TMBVUIFKGnekmZPNtqh1N+jShrz8rqa1I8ZgayCqMGvk6bL7TQLsnk5D6PYO7aUqKLqbBRlbkJft7v+zI1wuu3Rw+DZYGq6TtRLlSh/AI0GnNXMlA/dpWFPb52o1O9CbsBzRXvk2dwRWpKZsYwR7PhLIoMCvfD54Oq5Fn8yGPDnXXe3DXrXQ9Emx5K5Fz9p0vac1pde91Mo7y5H4b6PmE9JU3kgIOUZzTp+xReU8KrP/efdp5Wr6KCzLhYqQnEeHq7Y2BwNK/mov/vI857cua9KAQgruwLKSuvFz7IsAh/6wXI1r40IMlVB7DNs+V6YeMMXE3sSlP0I2CMzMeiI8ZrCLn0jkciMAjIX7+XZ7CJUaOXcuuMsmsQpodmTn3pn+VSt5a7AnGZ/id+1tbW1slsSKluaODDib7hFmZYloiYnc9U7sbae5TNzm0=
+    rooms:
+      secure: FImeXF6fFtm6EbJYU49Z3M/pGxu5ZxM+VafDvEaTUP9OoyPhh2MlsRZdOpxJJQ7hqssyCSFbtCh6q8DGrjRnMg0T4uglmIY5Yo+uPMAXP10wLbXnVepyvmfWEBr1D3J8seuOK/YAnkSqqstb3dVGkmvbK9RIrqpoXG5sQCEWZbZtzBSI7sF/0gbKVJKQ4NmKzxYzhyc/RSiWoXyPKmYwebFmRF/S37TKAKUzsNpdXcvkWEIwnyaIvTiJ3TNT8tsS2rmajT97QJoRtSPQxydEb4q7RmcAUr9DRiPS59Mgndd9+8OsLGy2iDBnH1opoOdnzc9ovwW4QibNjpWre9s0N/4QfZTIVQ8YLb1H8kYk/uRXNZ7XUWtuF2pn3+O2DqTUtdYJDj0xy7OskzwCv3yF+7krmDmdWR3lCX+PoHy+cX3YbnNSlPcDCdrPgU2/ry459Li8NfyALqkaz+c7TZ7idh2ej32Dc0GpRpUA3BBg0QcWgofqLxzfVphbrdvzPT/qzgtTnn4ZDR8TWBE7H3fQdf/elqIyqVv8e5EUdl8Foq1s7O2z0cZFBaiRHcjCYtAEoFD1wWMbNbqN6qV3a+aQFPfd5GIXRyLoKFWb5q7ym9Bc1oXQ3iDWKxOPknDBWYwSrfgDh8hMUAphF+CSlqfPFDEL245ASGEB07Sxm/RVJCA=
