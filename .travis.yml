@@ -13,12 +13,8 @@ before_install:
 - echo "MAVEN_OPTS='-Xmx256m'" > ~/.mavenrc
 - curl -o $HOME/.m2/settings.xml
   https://raw.githubusercontent.com/dangernoodle-io/artifact-version-recorder/master/src/main/travis/settings.xml
-install:
-- mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-- mvn verify jacoco:report
-after_success:
-- mvn coveralls:report
+- mvn -V -B verify jacoco:report coveralls:report
 notifications:
   email: false
   slack:
